@@ -15,10 +15,11 @@ function CommentInput({ onSubmitOfComment }) {
       setCommentBody("");
     }
   };
+ 
 
   return (
     <div>
-      <div>
+      <div className="comment-input">
         <input
           placeholder="What are your thoughts"
           value={commentBody}

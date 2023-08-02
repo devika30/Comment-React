@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CommentInput from "./CommentInput";
-import "./styles.css"
+import "./styles.css";
 
 function CommentItem({ commentsData }) {
   const [isReplying, setIsReplying] = useState(false);
@@ -17,7 +17,7 @@ function CommentItem({ commentsData }) {
       ) : (
         <button onClick={() => setIsReplying(true)}>Reply</button>
       )}
-      {isReplying ? <CommentInput onSubmitOfComment={onComment} /> : ""}
+      {isReplying ? <CommentInput onSubmitOfComment={onComment} /> : null}
       {comments.map((comment) => (
         <CommentItem commentsData={comment} key={comment.id} />
       ))}
@@ -26,6 +26,5 @@ function CommentItem({ commentsData }) {
 }
 
 export default CommentItem;
-
 
 //inside commentItem function we are calling commentItem again hence its a recursive problem
